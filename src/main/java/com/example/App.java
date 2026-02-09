@@ -2,7 +2,7 @@ package com.example;
 
 public class App {
     public static void main(String[] args) {
-        System.out.println("AWS DevOps CI/CD Demo App is running");
+        System.out.println("AWS DevOps CI/CD Demo ECR App is running");
 
         // keep app running so container stays alive
         while (true) {
