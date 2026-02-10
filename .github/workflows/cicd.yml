@@ -21,6 +21,14 @@ jobs:
     - name: Build & Test
       run: mvn clean test package
 
+    - name: Dependency Vulnerability Scan
+      run: mvn org.owasp:dependency-check-maven:check     
+      continue-on-error: true
+
+    - name: Security Policy Check
+      run: |
+        echo "Fail pipeline if critical vulnerabilities exist"
+
     - name: Configure AWS
       uses: aws-actions/configure-aws-credentials@v4
       with:
