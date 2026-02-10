@@ -21,6 +21,9 @@ jobs:
     - name: Build & Test
       run: mvn clean test package
 
+    - name: Dependency Vulnerability Scan
+      run: mvn org.owasp:dependency-check-maven:check
+
     - name: Configure AWS
       uses: aws-actions/configure-aws-credentials@v4
       with:
